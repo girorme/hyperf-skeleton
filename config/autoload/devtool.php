@@ -40,5 +40,8 @@ return [
         'Process' => [
             'namespace' => 'App\\Processes',
         ],
+        'Usecase' => [
+            'namespace' => 'App\\Usecase',
+        ]
     ],
 ];
