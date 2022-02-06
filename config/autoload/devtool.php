@@ -42,6 +42,9 @@ return [
         ],
         'Usecase' => [
             'namespace' => 'App\\Usecase',
+        ],
+        'Util' => [
+            'namespace' => 'App\\Util',
         ]
     ],
 ];
