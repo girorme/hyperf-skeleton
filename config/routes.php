@@ -11,6 +11,7 @@ declare(strict_types=1);
  */
 use Hyperf\HttpServer\Router\Router;
 use App\Controller\{UserController, AuthController};
+use App\Middleware\Auth\JwtMiddleware;
 
 Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
 
@@ -20,7 +21,7 @@ Router::get('/favicon.ico', function () {
 
 Router::addGroup('/api', function () {
     Router::addGroup('/user', function () {
-        Router::get('', [UserController::class, 'index']);
+        Router::get('', [UserController::class, 'index'], ['middleware' => [JwtMiddleware::class]]);
         Router::post('/register', [UserController::class, 'store']);
     });
 
